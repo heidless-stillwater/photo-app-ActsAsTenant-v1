@@ -7,12 +7,11 @@ class ApplicationController < ActionController::Base
 
 
   def stripe_payment; end
-  
+
   protected
 
   def configure_permitted_parameter_fields
-    devise_parameter_sanitizer.permit(:sign_up, keys: [ :avatar, :username, images: [] ] )    # new
+    devise_parameter_sanitizer.permit(:sign_up, keys: [ :avatar, :username, images: [] ])    # new
     devise_parameter_sanitizer.permit(:account_update, keys: [ :avatar, :username, images: [] ])   # edit
   end
-
 end

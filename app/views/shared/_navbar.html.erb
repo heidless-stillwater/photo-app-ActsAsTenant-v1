@@ -35,7 +35,11 @@
               <%= link_to "View Artifacts", artifacts_path, class: "dropdown-item" %>
             </div>
           </li>  
-        
+
+          <li class="nav-item">
+            <a class="nav-link">Organization: [<%= "none" unless current_user.organization_id %>]</a>
+          </li>
+
         <% end%>
         
       </ul>

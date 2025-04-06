@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => 'registrations' }
   root "welcome#index"
   
+  resources :organizations
+
   resources :artifacts do 
     member do
       # remove_artimg_artifact_path(artimg)

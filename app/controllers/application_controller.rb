@@ -11,8 +11,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def set_tenancy_organization
-    @organization = 1
-    @org_name = Organization.find(@organization).name
+    @organization = Organization.first
+    @org_name = @organization.name
   end
 
   def configure_permitted_parameter_fields

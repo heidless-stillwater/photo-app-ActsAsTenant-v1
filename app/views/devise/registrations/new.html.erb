@@ -9,23 +9,33 @@
   </div>
   <div class="panel-body">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { role: 'form', class: 'cc_form' }) do |f| %>
+
       <div class="form-group">
         <%= f.label :email %>
         <%= f.email_field :email, autofocus: true, class: 'form-control' %>
       </div>
 
+      <div class="form-group col-md-6 mt-3">
+        <%= f.label :username %>
+        <%= f.text_field :username, autocomplete: 'username', class: 'form-control' %>
+      </div>
+
+      <div class="form-group col-md-6 mt-3">
+        <%= f.label :organization %>
+        <%= f.select(:organization_id, class: "form-select") do %>
+          <% [['Limun Inc', 1], ['Add Corp', 2]].each do |c| -%>
+            <%= content_tag(:option, c.first, value: c.last) %>
+          <% end %>
+        <% end %>
+      </div>
 
       <div class="form-row">
         <div class="form-group col-md-6 mt-3">
           <%= f.label :avatar %>
           <%= f.file_field :avatar, class: 'form-control' %>
         </div>
-
-        <div class="form-group col-md-6 mt-3">
-          <%= f.label :username %>
-          <%= f.text_field :username, autocomplete: 'username', class: 'form-control' %>
-        </div>
       </div>
+
 
       <div class="form-group mt-3">
         <%= f.label :images, "Upload images: " %>

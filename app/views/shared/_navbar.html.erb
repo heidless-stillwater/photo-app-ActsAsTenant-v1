@@ -37,12 +37,13 @@
           </li>  
 
           <li class="nav-item">
-            <a class="nav-link">Organization: [<%= "none" unless current_user.organization_id %>]</a>
+            <a class="nav-link"><%= fa_icon 'camera' %>: [<%= @org_name %>][<%= current_user.organization_id %>]</a>
           </li>
 
         <% end%>
         
       </ul>
+      
 
       <ul class="ml-auto navbar-nav">
         <% if current_user  %>

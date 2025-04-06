@@ -10,15 +10,24 @@
         <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
       </div>
 
+      <div class="form-group col-md-6 mt-3">
+        <%= f.label :username %>
+        <%= f.text_field :username, autocomplete: 'username', class: 'form-control' %>
+      </div>
+
+      <div class="form-group col-md-6 mt-3">
+        <%= f.label :organization %>
+        <%= f.select(:organization_id, class: "form-select") do %>
+          <% [['Limun Inc', 1], ['Add Corp', 2]].each do |c| -%>
+            <%= content_tag(:option, c.first, value: c.last) %>
+          <% end %>
+        <% end %>
+      </div>
+
       <div class="form-row">
         <div class="form-group col-md-6 mt-3">
           <%= f.label :avatar %>
           <%= f.file_field :avatar, class: 'form-control' %>
-        </div>
-
-        <div class="form-group col-md-6 mt-3">
-          <%= f.label :username %>
-          <%= f.text_field :username, autocomplete: 'username', class: 'form-control' %>
         </div>
       </div>
 

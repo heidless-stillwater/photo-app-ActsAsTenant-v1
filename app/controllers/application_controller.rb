@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
   def set_tenancy_organization
     @organization = Organization.first
-    @org_name = @organization.name
+    @org_name = @organization.blank? ? "No Organization" : @organization.name
   end
 
   def configure_permitted_parameter_fields

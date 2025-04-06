@@ -18,8 +18,8 @@
       <div class="form-group col-md-6 mt-3">
         <%= f.label :organization %>
         <%= f.select(:organization_id, class: "form-select") do %>
-          <% [['Limun Inc', 1], ['Add Corp', 2]].each do |c| -%>
-            <%= content_tag(:option, c.first, value: c.last) %>
+          <% @organizations.each do |c| -%>
+            <%= content_tag(:option, c.name, value: c.id) %>
           <% end %>
         <% end %>
       </div>

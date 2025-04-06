@@ -11,6 +11,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def set_tenancy_organization
+    @organizations = Organization.all
+
     @organization = Organization.first
     @org_name = @organization.blank? ? "No Organization" : @organization.name
   end

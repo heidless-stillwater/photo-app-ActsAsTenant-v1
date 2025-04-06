@@ -5,8 +5,6 @@
       <%= image_tag current_user.avatar, width: "200", class: "mx-auto d-block" %>
     <% else %>
       <h1 class="text-center my-5"> No Avatar </h1>
-      <!-- <%= image_tag "https://storage.googleapis.com/h-pfolio-2-rails-photo-app-acts-as-tenant-v1-bucket-0/images/381-3819326_default-avatar-svg-png-icon-free-download-avatar.png", width: "200", class: "mx-auto d-block" %> -->
-
     <% end %>
 
     <h3 class="text-center mt-2 my-5"><%= fa_icon 'user 1x' %> <%= current_user.email %></h3>

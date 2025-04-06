@@ -51,7 +51,7 @@
           </li>  
 
           <li class="nav-item">
-            <a class="nav-link"><%= fa_icon 'camera' %>: [<%= @org_name %>][<%= current_user.organization_id %>]</a>
+            <a class="nav-link"><%= fa_icon 'camera' %> <%= Organization.find(current_user.organization_id).name %></a>
           </li>
 
         <% end%>

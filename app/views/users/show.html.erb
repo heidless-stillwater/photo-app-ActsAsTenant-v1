@@ -1,15 +1,20 @@
 
 <div class="container">
   
-  <h2 class="text-center mt-8 mb-4 text-white">User Profile</h2>
+  <h1 class="text-center my-3 text-white">Org: <%= Organization.find(@user.id).name %></h2>
+  <h2 class="text-center my-3 text-white">Account: <%= @user.email %></h2>
 
   <div class="">    
     <!-- <div class="card card-header results-block mt-3"> -->
     <div class="">
       <!-- <%= gravatar_for @user, size: 300 %> -->
 
-      <div class="img-responsive center-block">
-        <%= image_tag @user.avatar, width: "200", class: "mx-auto d-block" %>
+      <div class="img-responsive center-block">      
+        <% if current_user.avatar.present? %>  
+          <%= image_tag @user.avatar, width: "200", class: "mx-auto d-block" %>
+        <% else %>
+          <h1 class="text-center my-5"> No Avatar </h1>
+        <% end %>
       </div>
 
       <div class="my-3 text-center">
@@ -18,14 +23,14 @@
             <tr>
               <td>
                 <span class="">
-                  <strong>Email: </strong> <%= @user.email %>
+                  <h4 class="text-center mt-2 my-0"><%= fa_icon 'user 1x' %> <%= @user.email %></h4>
                 </span>
               </td>
             </tr>
             <tr>
               <td>
                 <span class="">
-                  <strong>username: </strong> <%= @user.username %>
+                  <h4 class="text-center mt-2 my-0">username: <%= @user.username %></h4>
                 </span>
               </td>
             </tr>
@@ -38,7 +43,5 @@
     </div>
   </div>
   
-  <%= link_to 'Back', root_path, class: "btn btn-primary mt-3" %>
-
 </div>
 

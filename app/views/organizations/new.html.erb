@@ -1,11 +1,13 @@
-<% content_for :title, "New organization" %>
 
-<h1>New organization</h1>
 
-<%= render "form", organization: @organization %>
+<div class="container">
 
-<br>
+  <% content_for :title, "New organization" %>
 
-<div>
-  <%= link_to "Back to organizations", organizations_path %>
+  <h1 class="text-center mt-8 mb-4 text-white">New organization</h1>
+
+  <%= render "form", organization: @organization %>
+
+  <br>
+
 </div>

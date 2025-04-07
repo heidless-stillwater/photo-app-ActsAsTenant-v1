@@ -1,8 +1,11 @@
 
 <div class="container">
   
-  <h1 class="text-center my-3 text-white">Org: <%= Organization.find(@user.id).name %></h2>
-  <h2 class="text-center my-3 text-white">Account: <%= @user.email %></h2>
+  <% # debugger %>
+  <div class="mt-4 mb-3">
+    <h1 class="text-center my-3 text-white">Org: <%= Organization.find(@user.organization_id).name %></h2>
+    <h2 class="text-center my-3 text-white">Account: <%= @user.email %></h2>
+  </div>
 
   <div class="">    
     <!-- <div class="card card-header results-block mt-3"> -->

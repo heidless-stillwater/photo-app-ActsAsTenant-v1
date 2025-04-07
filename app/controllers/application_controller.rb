@@ -15,6 +15,10 @@ class ApplicationController < ActionController::Base
 
     @organization = Organization.first
     @org_name = @organization.blank? ? "No Organization" : @organization.name
+
+    @org_active = Organization.second
+    @org_active_name = @org_active.blank? ? "No Organization" : @org_active.name
+
   end
 
   def configure_permitted_parameter_fields

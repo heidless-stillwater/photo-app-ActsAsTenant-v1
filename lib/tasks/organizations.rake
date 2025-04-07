@@ -3,10 +3,10 @@ namespace :organizations do
   task seed_organizations: :environment do
     Organization.destroy_all
 
-    lumin = Organization.create(name: "Lumin Inc")
-    choam = Organization.create(name: "C.H.O.A.M")
-    puts "LUMIN: #{lumin.name}"
-    puts "CHOAM: #{choam.name}"
+    lumin = Organization.create(name: "Lumin Inc", active_org: false)
+    choam = Organization.create(name: "C.H.O.A.M", active_org: true)
+    puts "LUMIN: #{lumin.name} : #{lumin.active_org}"
+    puts "CHOAM: #{choam.name} : #{choam.active_org}"
 
     user1 = User.create(email: "jsnow@test.com", username: "jsnow", password: "password", organization_id: choam.id)
     user2 = User.create(email: "test_1@test.com", username: "t1000", password: "password", organization_id: lumin.id)

@@ -60,7 +60,7 @@
 
           <li class="nav-item me-3">
               <%= link_to Organization.find(current_user.organization_id), class: "btn btn-warning", style: "text-decoration: none" do %>
-                <%= fa_icon 'camera' %> <%= Organization.find(current_user.organization_id).name %>
+                <%= fa_icon 'building' %> <%= Organization.find(current_user.organization_id).name %>
               <% end %>
           </li>
 

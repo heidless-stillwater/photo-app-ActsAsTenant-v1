@@ -18,6 +18,7 @@
       <div class="form-group col-md-6 mt-3">
         <%= f.label :organization %>
         <%= f.select(:organization_id, class: "form-select") do %>
+          <% # debugger %>
           <% @organizations.each do |c| -%>
             <%= content_tag(:option, c.name, value: c.id) %>
           <% end %>

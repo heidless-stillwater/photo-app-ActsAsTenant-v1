@@ -2,6 +2,11 @@
   <div class="card card-header" style="width: 19rem;">
     <div class="card-body">
       <h5 class="card-title mt-2"><%= organization.name %></h5>
+      <% if organization.active_org %>
+        <p class="card-text">Active</p>
+      <% else %>
+        <p class="card-text">Inactive</p>
+      <% end %>
     </div>
   </div>
 </div>

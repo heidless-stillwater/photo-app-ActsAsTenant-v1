@@ -1,7 +1,9 @@
 <div id="<%= dom_id organization %>">
   <div class="card card-header" style="width: 19rem;">
     <div class="card-body">
-      <h5 class="card-title mt-2"><%= organization.name %></h5>
+      <h5 class="card-title mt-2">Org: <%= organization.name %></h5>
+      <h5 class="card-title mt-2">domain: <%= organization.domain %></h5>
+      <h5 class="card-title mt-2 mb-4">subdomain: <%= organization.subdomain %></h5>
       <% if organization.active_org %>
         <p class="card-text">Active</p>
       <% else %>

@@ -19,6 +19,12 @@
         <%= form.label :name, style: "display: block", class: "flabel" %>
         <%= form.text_field :name %>
 
+        <%= form.label :domain, style: "display: block", class: "flabel" %>
+        <%= form.text_field :domain %>
+
+        <%= form.label :subdomain, style: "display: block", class: "flabel" %>
+        <%= form.text_field :subdomain %>
+
         <div class="mt-4">
 
           <%= form.radio_button :active_org, true %>

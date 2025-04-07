@@ -1,5 +1,13 @@
 class ApplicationController < ActionController::Base
+  # set_current_tenant_by_subdomain_or_domain(:organization, :subdomain, :domain)
+  set_current_tenant_through_filter
   before_action :set_tenancy_organization
+
+  # before_action do 
+  #   binding.irb
+  # end
+
+  # before_action :set_tenancy_organization
   before_action :configure_permitted_parameter_fields, if: :devise_controller?
 
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
@@ -21,6 +29,8 @@ class ApplicationController < ActionController::Base
     end
 
     @org_active_name = @org_active.blank? ? "No Organization" : @org_active.name
+
+    set_current_tenant(@org_active)
 
   end
 

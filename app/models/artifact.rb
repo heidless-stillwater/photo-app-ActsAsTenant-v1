@@ -1,4 +1,6 @@
 class Artifact < ApplicationRecord
+  acts_as_tenant :organization
+
   belongs_to :user#
 
   has_one_attached :artimg do |attachable|

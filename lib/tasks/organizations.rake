@@ -3,8 +3,8 @@ namespace :organizations do
   task seed_organizations: :environment do
     Organization.destroy_all
 
-    lumin = Organization.create(name: "Lumin Inc", active_org: false)
-    choam = Organization.create(name: "C.H.O.A.M", active_org: true)
+    lumin = Organization.create(name: "Lumin Inc", active_org: false, domain: "lumin.com", subdomain: "innies")
+    choam = Organization.create(name: "C.H.O.A.M", active_org: true, domain: "choam.com", subdomain: "spice")
     puts "LUMIN: #{lumin.name} : #{lumin.active_org}"
     puts "CHOAM: #{choam.name} : #{choam.active_org}"
 

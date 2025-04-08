@@ -25,6 +25,13 @@
         <%= form.label :subdomain, style: "display: block", class: "flabel" %>
         <%= form.text_field :subdomain %>
 
+        <div class="form-row">
+          <div class="form-group col-md-6 mt-3">
+            <%= form.label :logo %>
+            <%= form.file_field :logo, class: 'form-control' %>
+          </div>
+        </div>
+
         <div class="mt-4">
 
           <%= form.radio_button :active_org, true %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_04_07_143912) do
+ActiveRecord::Schema[7.2].define(version: 2025_04_07_215411) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -62,6 +62,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_04_07_143912) do
     t.boolean "active_org", default: false
     t.string "domain"
     t.string "subdomain"
+    t.string "logo"
     t.index ["user_id"], name: "index_organizations_on_user_id"
   end
 
